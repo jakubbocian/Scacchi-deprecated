@@ -2,6 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.*;
 import javax.swing.*;
 /**
  *
@@ -9,14 +12,16 @@ import javax.swing.*;
  */
 public class FrameMenu extends javax.swing.JFrame {
     
-    static int stile_scacchiera=1;
-    
+    static private int stile_scacchiera=1;
+    static public final String percorso_effetto_menu = "E:\\Scuola\\Java\\Scacchi\\Scacchi\\src\\hitclap.wav";
+    static public final String percorso_effetto_opzioni = "E:\\Scuola\\Java\\Scacchi\\Scacchi\\src\\hitclap2.wav";
     /**
      * Creates new form FrameMenu
      */
     public FrameMenu() {
         initComponents();
         jPanel2.setVisible(false);
+        
     }
 
     /**
@@ -138,17 +143,17 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -277,6 +282,8 @@ public class FrameMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();
         bottone.setBounds(bottone.getLocation().x-7, bottone.getLocation().y-7, bottone.getSize().width+14, bottone.getSize().height+14);
+        RiproduciEffetto(percorso_effetto_menu);
+
         
     }//GEN-LAST:event_BottoneEntra
 
@@ -284,6 +291,7 @@ public class FrameMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();
         bottone.setBounds(bottone.getLocation().x+7, bottone.getLocation().y+7, bottone.getSize().width-14, bottone.getSize().height-14);
+
     }//GEN-LAST:event_BottoneEsci
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -294,15 +302,17 @@ public class FrameMenu extends javax.swing.JFrame {
     private void BottoneEntraTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BottoneEntraTriste
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();      
-        bottone.setText("Esci :(");
+        //bottone.setText("Esci :(");
         bottone.setBounds(bottone.getLocation().x-7, bottone.getLocation().y-7, bottone.getSize().width+14, bottone.getSize().height+14);
+        RiproduciEffetto(percorso_effetto_menu);
+
     }//GEN-LAST:event_BottoneEntraTriste
 
     private void BottoneEsciTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BottoneEsciTriste
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();
         bottone.setBounds(bottone.getLocation().x+7, bottone.getLocation().y+7, bottone.getSize().width-14, bottone.getSize().height-14);
-        bottone.setText("Esci :)");        
+        //bottone.setText("Esci :)");        
     }//GEN-LAST:event_BottoneEsciTriste
 
     private void ListenerApriOpzioni(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListenerApriOpzioni
@@ -330,6 +340,7 @@ public class FrameMenu extends javax.swing.JFrame {
             stile_scacchiera = stile_scacchiera +1;
         
         imposta_stile();
+        RiproduciEffetto(percorso_effetto_opzioni);
 
     }//GEN-LAST:event_premi_frecciadx
 
@@ -343,6 +354,7 @@ public class FrameMenu extends javax.swing.JFrame {
             stile_scacchiera = stile_scacchiera -1;
         
         imposta_stile();
+        RiproduciEffetto(percorso_effetto_opzioni);
     }//GEN-LAST:event_premi_frecciasx
 
     private void EliminaRisPartite(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaRisPartite
@@ -361,7 +373,24 @@ public class FrameMenu extends javax.swing.JFrame {
         
         else
             jLabel3.setText("Moderno");
+                                                                                            
+    }
     
+    public static void RiproduciEffetto(String percorso){
+    
+        
+     
+        try{
+            
+            File file = new File(percorso);
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(file));
+            clip.start();
+            
+        }catch(Exception e){
+                
+        }
+        
     }
     
     /**
