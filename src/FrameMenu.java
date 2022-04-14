@@ -16,6 +16,7 @@ public class FrameMenu extends javax.swing.JFrame {
      */
     public FrameMenu() {
         initComponents();
+        jPanel2.setVisible(false);
     }
 
     /**
@@ -323,7 +324,7 @@ public class FrameMenu extends javax.swing.JFrame {
     private void premi_frecciadx(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_premi_frecciadx
         // TODO add your handling code here:
         if(stile_scacchiera==3)
-            stile_scacchiera = 0;
+            stile_scacchiera = 1;
         
         else
             stile_scacchiera = stile_scacchiera +1;
