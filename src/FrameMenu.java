@@ -40,7 +40,7 @@ public class FrameMenu extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         MenuOpzioni = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        labelScacchi = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -159,8 +159,8 @@ public class FrameMenu extends javax.swing.JFrame {
         MenuOpzioni.setPreferredSize(new java.awt.Dimension(600, 400));
         MenuOpzioni.setVisible(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(155, 50));
+        labelScacchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
+        labelScacchi.setPreferredSize(new java.awt.Dimension(155, 50));
 
         jButton5.setBackground(new java.awt.Color(188, 140, 99));
         jButton5.setText("Esci");
@@ -233,14 +233,14 @@ public class FrameMenu extends javax.swing.JFrame {
                         .addGap(180, 180, 180))))
             .addGroup(MenuOpzioniLayout.createSequentialGroup()
                 .addGap(220, 220, 220)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         MenuOpzioniLayout.setVerticalGroup(
             MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuOpzioniLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
@@ -443,9 +443,9 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel labelScacchi;
     // End of variables declaration//GEN-END:variables
 }
