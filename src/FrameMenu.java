@@ -8,7 +8,9 @@ import javax.swing.*;
  * @author ADMIN
  */
 public class FrameMenu extends javax.swing.JFrame {
-
+    
+    static int stile_scacchiera=1;
+    
     /**
      * Creates new form FrameMenu
      */
@@ -31,15 +33,24 @@ public class FrameMenu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scacchi");
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(188, 140, 99));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Gioca");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -55,6 +66,8 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(133, 94, 66));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Opzioni");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -70,7 +83,9 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Esci");
+        jButton3.setBackground(new java.awt.Color(133, 94, 66));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Esci :)");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntraTriste(evt);
@@ -85,6 +100,8 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(188, 140, 99));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Partite precedenti");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -102,24 +119,27 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))))
+                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(200, Short.MAX_VALUE))
+            .addComponent(jSeparator2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,18 +155,52 @@ public class FrameMenu extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(155, 50));
 
+        jButton5.setBackground(new java.awt.Color(188, 140, 99));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Esci");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton5BottoneEntraTriste(evt);
+                BottoneEntraTriste(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton5BottoneEsciTriste(evt);
+                BottoneEsciTriste(evt);
             }
         });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                EsciOpzioni(evt);
+            }
+        });
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciasx.png"))); // NOI18N
+        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setFocusPainted(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                premi_frecciasx(evt);
+            }
+        });
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciadx.png"))); // NOI18N
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
+        jButton7.setFocusPainted(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                premi_frecciadx(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 0, 40)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Classico");
+
+        jButton8.setText("Elimina risultati delle partite");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminaRisPartite(evt);
             }
         });
 
@@ -154,21 +208,43 @@ public class FrameMenu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(223, 223, 223)
+                .addContainerGap(170, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(162, 162, 162))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(220, 220, 220)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(222, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -216,7 +292,7 @@ public class FrameMenu extends javax.swing.JFrame {
     private void BottoneEntraTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BottoneEntraTriste
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();      
-        bottone.setText(bottone.getText()+ " :(");
+        bottone.setText("Esci :(");
         bottone.setBounds(bottone.getLocation().x-7, bottone.getLocation().y-7, bottone.getSize().width+14, bottone.getSize().height+14);
     }//GEN-LAST:event_BottoneEntraTriste
 
@@ -224,7 +300,7 @@ public class FrameMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         JButton bottone = (JButton)evt.getSource();
         bottone.setBounds(bottone.getLocation().x+7, bottone.getLocation().y+7, bottone.getSize().width-14, bottone.getSize().height-14);
-        bottone.setText("Esci");        
+        bottone.setText("Esci :)");        
     }//GEN-LAST:event_BottoneEsciTriste
 
     private void ListenerApriOpzioni(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListenerApriOpzioni
@@ -237,20 +313,55 @@ public class FrameMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton5BottoneEntraTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5BottoneEntraTriste
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5BottoneEntraTriste
-
-    private void jButton5BottoneEsciTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5BottoneEsciTriste
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5BottoneEsciTriste
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void EsciOpzioni(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EsciOpzioni
         // TODO add your handling code here:
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_EsciOpzioni
 
+    private void premi_frecciadx(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_premi_frecciadx
+        // TODO add your handling code here:
+        if(stile_scacchiera==3)
+            stile_scacchiera = 0;
+        
+        else
+            stile_scacchiera = stile_scacchiera +1;
+        
+        imposta_stile();
+
+    }//GEN-LAST:event_premi_frecciadx
+
+    private void premi_frecciasx(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_premi_frecciasx
+        // TODO add your handling code here:
+        
+        if(stile_scacchiera==1)
+            stile_scacchiera = 3;
+        
+        else
+            stile_scacchiera = stile_scacchiera -1;
+        
+        imposta_stile();
+    }//GEN-LAST:event_premi_frecciasx
+
+    private void EliminaRisPartite(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaRisPartite
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Lista delle partite precedenti pulita con successo", "Operazione effettuata", JOptionPane.PLAIN_MESSAGE);
+        
+    }//GEN-LAST:event_EliminaRisPartite
+    
+    private void imposta_stile(){
+        
+        if(stile_scacchiera == 1)
+            jLabel3.setText("Classico");
+        
+        else if(stile_scacchiera == 2)
+            jLabel3.setText("Anni 60");
+        
+        else
+            jLabel3.setText("Moderno");
+    
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -281,7 +392,11 @@ public class FrameMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameMenu().setVisible(true);
+                
+                FrameMenu f = new FrameMenu();
+                
+                f.setVisible(true);
+                f.setLocationRelativeTo(null);
             }
         });
     }
@@ -292,9 +407,15 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
