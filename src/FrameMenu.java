@@ -16,6 +16,7 @@ public class FrameMenu extends javax.swing.JFrame {
      */
     public FrameMenu() {
         initComponents();
+        jPanel2.setVisible(false);
     }
 
     /**
