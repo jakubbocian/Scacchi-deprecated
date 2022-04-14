@@ -33,20 +33,20 @@ public class FrameMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuMain = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
+        buttonScacchi = new javax.swing.JLabel();
+        buttonMenuGioca = new javax.swing.JButton();
+        buttonMenuOpzioni = new javax.swing.JButton();
+        buttonMenuEsci = new javax.swing.JButton();
+        buttonMenuPartitePrec = new javax.swing.JButton();
+        separatorMeinMenu = new javax.swing.JSeparator();
         MenuOpzioni = new javax.swing.JPanel();
-        labelScacchi = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        labelOpzioni = new javax.swing.JLabel();
+        buttonOpzioniEsci = new javax.swing.JButton();
+        buttonFrecciaSxStili = new javax.swing.JButton();
+        buttonFrecciaDxStili = new javax.swing.JButton();
+        labelStili = new javax.swing.JLabel();
+        buttonEliminaRisultati = new javax.swing.JButton();
+        separatorOpzioni = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scacchi");
@@ -54,11 +54,11 @@ public class FrameMenu extends javax.swing.JFrame {
 
         MenuMain.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
+        buttonScacchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(188, 140, 99));
-        jButton1.setText("Gioca");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonMenuGioca.setBackground(new java.awt.Color(188, 140, 99));
+        buttonMenuGioca.setText("Gioca");
+        buttonMenuGioca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntra(evt);
             }
@@ -66,16 +66,16 @@ public class FrameMenu extends javax.swing.JFrame {
                 BottoneEsci(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonMenuGioca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonMenuGiocaActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(133, 94, 66));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Opzioni");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonMenuOpzioni.setBackground(new java.awt.Color(133, 94, 66));
+        buttonMenuOpzioni.setForeground(new java.awt.Color(255, 255, 255));
+        buttonMenuOpzioni.setText("Opzioni");
+        buttonMenuOpzioni.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntra(evt);
             }
@@ -83,16 +83,16 @@ public class FrameMenu extends javax.swing.JFrame {
                 BottoneEsci(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonMenuOpzioni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListenerApriOpzioni(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(133, 94, 66));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Esci :)");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonMenuEsci.setBackground(new java.awt.Color(133, 94, 66));
+        buttonMenuEsci.setForeground(new java.awt.Color(255, 255, 255));
+        buttonMenuEsci.setText("Esci :)");
+        buttonMenuEsci.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntraTriste(evt);
             }
@@ -100,15 +100,15 @@ public class FrameMenu extends javax.swing.JFrame {
                 BottoneEsciTriste(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonMenuEsci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                buttonMenuEsciActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(188, 140, 99));
-        jButton4.setText("Partite precedenti");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonMenuPartitePrec.setBackground(new java.awt.Color(188, 140, 99));
+        buttonMenuPartitePrec.setText("Partite precedenti");
+        buttonMenuPartitePrec.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntra(evt);
             }
@@ -126,32 +126,32 @@ public class FrameMenu extends javax.swing.JFrame {
                     .addGroup(MenuMainLayout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addGroup(MenuMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMenuEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(MenuMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                                .addComponent(buttonMenuOpzioni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonMenuGioca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonMenuPartitePrec, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
                     .addGroup(MenuMainLayout.createSequentialGroup()
                         .addGap(221, 221, 221)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(200, Short.MAX_VALUE))
-            .addComponent(jSeparator2)
+            .addComponent(separatorMeinMenu)
         );
         MenuMainLayout.setVerticalGroup(
             MenuMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuMainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separatorMeinMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMenuGioca, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMenuOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMenuPartitePrec, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMenuEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
@@ -159,12 +159,12 @@ public class FrameMenu extends javax.swing.JFrame {
         MenuOpzioni.setPreferredSize(new java.awt.Dimension(600, 400));
         MenuOpzioni.setVisible(false);
 
-        labelScacchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
-        labelScacchi.setPreferredSize(new java.awt.Dimension(155, 50));
+        labelOpzioni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
+        labelOpzioni.setPreferredSize(new java.awt.Dimension(155, 50));
 
-        jButton5.setBackground(new java.awt.Color(188, 140, 99));
-        jButton5.setText("Esci");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonOpzioniEsci.setBackground(new java.awt.Color(188, 140, 99));
+        buttonOpzioniEsci.setText("Esci");
+        buttonOpzioniEsci.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BottoneEntraTriste(evt);
             }
@@ -172,39 +172,39 @@ public class FrameMenu extends javax.swing.JFrame {
                 BottoneEsciTriste(evt);
             }
         });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonOpzioniEsci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EsciOpzioni(evt);
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciasx.png"))); // NOI18N
-        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setFocusPainted(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonFrecciaSxStili.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciasx.png"))); // NOI18N
+        buttonFrecciaSxStili.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        buttonFrecciaSxStili.setBorderPainted(false);
+        buttonFrecciaSxStili.setContentAreaFilled(false);
+        buttonFrecciaSxStili.setFocusPainted(false);
+        buttonFrecciaSxStili.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 premi_frecciasx(evt);
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciadx.png"))); // NOI18N
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.setFocusPainted(false);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonFrecciaDxStili.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frecciadx.png"))); // NOI18N
+        buttonFrecciaDxStili.setBorderPainted(false);
+        buttonFrecciaDxStili.setContentAreaFilled(false);
+        buttonFrecciaDxStili.setFocusPainted(false);
+        buttonFrecciaDxStili.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 premi_frecciadx(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 0, 40)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Classico");
+        labelStili.setFont(new java.awt.Font("Calibri Light", 0, 40)); // NOI18N
+        labelStili.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelStili.setText("Classico");
 
-        jButton8.setText("Elimina risultati delle partite");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonEliminaRisultati.setText("Elimina risultati delle partite");
+        buttonEliminaRisultati.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminaRisPartite(evt);
             }
@@ -214,44 +214,44 @@ public class FrameMenu extends javax.swing.JFrame {
         MenuOpzioni.setLayout(MenuOpzioniLayout);
         MenuOpzioniLayout.setHorizontalGroup(
             MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(separatorOpzioni, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
                 .addContainerGap(170, Short.MAX_VALUE)
                 .addGroup(MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonOpzioniEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonFrecciaSxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelStili, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonFrecciaDxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(162, 162, 162))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonEliminaRisultati, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(180, 180, 180))))
             .addGroup(MenuOpzioniLayout.createSequentialGroup()
                 .addGap(220, 220, 220)
-                .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         MenuOpzioniLayout.setVerticalGroup(
             MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuOpzioniLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separatorOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonFrecciaSxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelStili)
+                    .addComponent(buttonFrecciaDxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonEliminaRisultati, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonOpzioniEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
 
@@ -293,10 +293,10 @@ public class FrameMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BottoneEsci
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void buttonMenuEsciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuEsciActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_buttonMenuEsciActionPerformed
 
     private void BottoneEntraTriste(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BottoneEntraTriste
         // TODO add your handling code here:
@@ -320,9 +320,9 @@ public class FrameMenu extends javax.swing.JFrame {
         MenuOpzioni.setVisible(true);
     }//GEN-LAST:event_ListenerApriOpzioni
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonMenuGiocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuGiocaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonMenuGiocaActionPerformed
 
     private void EsciOpzioni(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EsciOpzioni
         // TODO add your handling code here:
@@ -365,13 +365,13 @@ public class FrameMenu extends javax.swing.JFrame {
     private void imposta_stile(){
         
         if(stile_scacchiera == 1)
-            jLabel3.setText("Classico");
+            labelStili.setText("Classico");
         
         else if(stile_scacchiera == 2)
-            jLabel3.setText("Anni 60");
+            labelStili.setText("Anni 60");
         
         else
-            jLabel3.setText("Moderno");
+            labelStili.setText("Moderno");
                                                                                             
     }
     
@@ -434,18 +434,18 @@ public class FrameMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MenuMain;
     private javax.swing.JPanel MenuOpzioni;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel labelScacchi;
+    private javax.swing.JButton buttonEliminaRisultati;
+    private javax.swing.JButton buttonFrecciaDxStili;
+    private javax.swing.JButton buttonFrecciaSxStili;
+    private javax.swing.JButton buttonMenuEsci;
+    private javax.swing.JButton buttonMenuGioca;
+    private javax.swing.JButton buttonMenuOpzioni;
+    private javax.swing.JButton buttonMenuPartitePrec;
+    private javax.swing.JButton buttonOpzioniEsci;
+    private javax.swing.JLabel buttonScacchi;
+    private javax.swing.JLabel labelOpzioni;
+    private javax.swing.JLabel labelStili;
+    private javax.swing.JSeparator separatorMeinMenu;
+    private javax.swing.JSeparator separatorOpzioni;
     // End of variables declaration//GEN-END:variables
 }
