@@ -47,10 +47,11 @@ public class FrameMenu extends javax.swing.JFrame {
         setTitle("Scacchi");
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(188, 140, 99));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Gioca");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -101,7 +102,6 @@ public class FrameMenu extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(188, 140, 99));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Partite precedenti");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -150,13 +150,14 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(600, 400));
+        jPanel2.setVisible(false);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/opzioni_text.png"))); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(155, 50));
 
         jButton5.setBackground(new java.awt.Color(188, 140, 99));
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Esci");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
