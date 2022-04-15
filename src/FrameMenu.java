@@ -6,15 +6,19 @@ import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
 import javax.swing.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 /**
  *
  * @author ADMIN
  */
 public class FrameMenu extends javax.swing.JFrame {
     
+    Path currentRelativePath = Paths.get("");
+    String s = currentRelativePath.toAbsolutePath().toString();
     static private int stile_scacchiera=1;
-    static public final String percorso_effetto_menu = "E:\\Scuola\\Java\\Scacchi\\Scacchi\\src\\hitclap.wav";
-    static public final String percorso_effetto_opzioni = "E:\\Scuola\\Java\\Scacchi\\Scacchi\\src\\hitclap2.wav";
+    public final String percorso_effetto_menu = s+"\\src\\hitclap.wav";
+    public final String percorso_effetto_opzioni = s+"\\src\\hitclap2.wav";
     /**
      * Creates new form FrameMenu
      */
