@@ -16,7 +16,10 @@ public class FrameMenu extends javax.swing.JFrame {
     
     Path currentRelativePath = Paths.get("");
     String s = currentRelativePath.toAbsolutePath().toString();
-    static private int stile_scacchiera=1;
+    
+    static public int stile_scacchiera=1;
+    static public int livello_volume = 50;
+    
     public final String percorso_effetto_menu = s+"\\src\\hitclap.wav";
     public final String percorso_effetto_opzioni = s+"\\src\\hitclap2.wav";
     /**
@@ -51,6 +54,11 @@ public class FrameMenu extends javax.swing.JFrame {
         labelStili = new javax.swing.JLabel();
         buttonEliminaRisultati = new javax.swing.JButton();
         separatorOpzioni = new javax.swing.JSeparator();
+        sliderVolume = new javax.swing.JSlider();
+        labelVolume0 = new javax.swing.JLabel();
+        labelVolume50 = new javax.swing.JLabel();
+        labelVolume100 = new javax.swing.JLabel();
+        labelOpzioniVolume = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scacchi");
@@ -214,17 +222,40 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
+        sliderVolume.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Imposta_livello_volume(evt);
+            }
+        });
+
+        labelVolume0.setText("0");
+        labelVolume0.setToolTipText("");
+
+        labelVolume50.setText("50");
+
+        labelVolume100.setText("100");
+
+        labelOpzioniVolume.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
+        labelOpzioniVolume.setText("Volume:");
+
         javax.swing.GroupLayout MenuOpzioniLayout = new javax.swing.GroupLayout(MenuOpzioni);
         MenuOpzioni.setLayout(MenuOpzioniLayout);
         MenuOpzioniLayout.setHorizontalGroup(
             MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(separatorOpzioni, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(MenuOpzioniLayout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(labelOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
+                .addContainerGap(128, Short.MAX_VALUE)
                 .addGroup(MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
                         .addComponent(buttonOpzioniEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
+                        .addComponent(buttonEliminaRisultati, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
                         .addComponent(buttonFrecciaSxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -233,12 +264,18 @@ public class FrameMenu extends javax.swing.JFrame {
                         .addComponent(buttonFrecciaDxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(162, 162, 162))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
-                        .addComponent(buttonEliminaRisultati, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180))))
-            .addGroup(MenuOpzioniLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(labelOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(sliderVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
+                        .addComponent(labelVolume0)
+                        .addGap(179, 179, 179)
+                        .addComponent(labelVolume50)
+                        .addGap(121, 121, 121)
+                        .addComponent(labelVolume100)
+                        .addGap(136, 136, 136))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOpzioniLayout.createSequentialGroup()
+                        .addComponent(labelOpzioniVolume)
+                        .addGap(263, 263, 263))))
         );
         MenuOpzioniLayout.setVerticalGroup(
             MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,7 +291,16 @@ public class FrameMenu extends javax.swing.JFrame {
                     .addComponent(buttonFrecciaDxStili, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(buttonEliminaRisultati, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(labelOpzioniVolume)
+                .addGap(4, 4, 4)
+                .addComponent(sliderVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MenuOpzioniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelVolume0)
+                    .addComponent(labelVolume50)
+                    .addComponent(labelVolume100))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(buttonOpzioniEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -365,6 +411,21 @@ public class FrameMenu extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Lista delle partite precedenti pulita con successo", "Operazione effettuata", JOptionPane.PLAIN_MESSAGE);
         
     }//GEN-LAST:event_EliminaRisPartite
+
+    private void Imposta_livello_volume(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Imposta_livello_volume
+        // TODO add your handling code here:
+        livello_volume = sliderVolume.getValue();
+        
+    }//GEN-LAST:event_Imposta_livello_volume
+    
+    public static void cambia_volume(Clip clip){
+    
+        FloatControl control = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        float range = control.getMinimum();
+        float result = range * (1 - livello_volume / 100.0f);
+        control.setValue(result);
+        
+    }
     
     private void imposta_stile(){
         
@@ -388,6 +449,9 @@ public class FrameMenu extends javax.swing.JFrame {
             File file = new File(percorso);
             Clip clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(file));
+            
+            cambia_volume(clip);
+            
             clip.start();
             
         }catch(Exception e){
@@ -448,8 +512,13 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JButton buttonOpzioniEsci;
     private javax.swing.JLabel buttonScacchi;
     private javax.swing.JLabel labelOpzioni;
+    private javax.swing.JLabel labelOpzioniVolume;
     private javax.swing.JLabel labelStili;
+    private javax.swing.JLabel labelVolume0;
+    private javax.swing.JLabel labelVolume100;
+    private javax.swing.JLabel labelVolume50;
     private javax.swing.JSeparator separatorMeinMenu;
     private javax.swing.JSeparator separatorOpzioni;
+    private javax.swing.JSlider sliderVolume;
     // End of variables declaration//GEN-END:variables
 }
