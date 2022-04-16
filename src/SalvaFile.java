@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author ADMIN
  */
-public class SalvaRisultato {
+public class SalvaFile {
    
     
     Path currentRelativePath = Paths.get("");

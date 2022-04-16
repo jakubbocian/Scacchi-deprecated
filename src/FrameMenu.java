@@ -28,6 +28,7 @@ public class FrameMenu extends javax.swing.JFrame {
     public FrameMenu() {
         initComponents();
         MenuOpzioni.setVisible(false);
+        GiocaScegli.setVisible(false);
     }
 
     /**
@@ -40,7 +41,7 @@ public class FrameMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuMain = new javax.swing.JPanel();
-        buttonScacchi = new javax.swing.JLabel();
+        labelScacchi = new javax.swing.JLabel();
         buttonMenuGioca = new javax.swing.JButton();
         buttonMenuOpzioni = new javax.swing.JButton();
         buttonMenuEsci = new javax.swing.JButton();
@@ -59,6 +60,12 @@ public class FrameMenu extends javax.swing.JFrame {
         labelVolume50 = new javax.swing.JLabel();
         labelVolume100 = new javax.swing.JLabel();
         labelOpzioniVolume = new javax.swing.JLabel();
+        GiocaScegli = new javax.swing.JPanel();
+        buttonNuova = new javax.swing.JButton();
+        buttonCarica = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        labelCosaPreferisci = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scacchi");
@@ -66,7 +73,7 @@ public class FrameMenu extends javax.swing.JFrame {
 
         MenuMain.setBackground(new java.awt.Color(255, 255, 255));
 
-        buttonScacchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
+        labelScacchi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scacchi_text.png"))); // NOI18N
 
         buttonMenuGioca.setBackground(new java.awt.Color(188, 140, 99));
         buttonMenuGioca.setText("Gioca");
@@ -80,7 +87,7 @@ public class FrameMenu extends javax.swing.JFrame {
         });
         buttonMenuGioca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonMenuGiocaActionPerformed(evt);
+                GiocaPremuto(evt);
             }
         });
 
@@ -145,7 +152,7 @@ public class FrameMenu extends javax.swing.JFrame {
                                 .addComponent(buttonMenuPartitePrec, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
                     .addGroup(MenuMainLayout.createSequentialGroup()
                         .addGap(221, 221, 221)
-                        .addComponent(buttonScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(200, Short.MAX_VALUE))
             .addComponent(separatorMeinMenu)
         );
@@ -153,7 +160,7 @@ public class FrameMenu extends javax.swing.JFrame {
             MenuMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuMainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelScacchi, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separatorMeinMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -164,7 +171,7 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addComponent(buttonMenuPartitePrec, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(buttonMenuEsci, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         MenuOpzioni.setBackground(new java.awt.Color(255, 255, 255));
@@ -308,6 +315,91 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        GiocaScegli.setBackground(new java.awt.Color(255, 255, 255));
+        GiocaScegli.setForeground(new java.awt.Color(255, 255, 255));
+
+        buttonNuova.setBackground(new java.awt.Color(188, 140, 99));
+        buttonNuova.setForeground(new java.awt.Color(0, 0, 0));
+        buttonNuova.setText("Nuova Partita");
+        buttonNuova.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BottoneEntra(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BottoneEsci(evt);
+            }
+        });
+        buttonNuova.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNuovaActionPerformed(evt);
+            }
+        });
+
+        buttonCarica.setBackground(new java.awt.Color(133, 94, 66));
+        buttonCarica.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCarica.setText("Carica partita");
+        buttonCarica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BottoneEntra(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BottoneEsci(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(188, 140, 99));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Indietro");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BottoneEntraTriste(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BottoneEsciTriste(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InidetroPremuto(evt);
+            }
+        });
+
+        labelCosaPreferisci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cosa_preferisci_text.png"))); // NOI18N
+
+        javax.swing.GroupLayout GiocaScegliLayout = new javax.swing.GroupLayout(GiocaScegli);
+        GiocaScegli.setLayout(GiocaScegliLayout);
+        GiocaScegliLayout.setHorizontalGroup(
+            GiocaScegliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GiocaScegliLayout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addGroup(GiocaScegliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GiocaScegliLayout.createSequentialGroup()
+                        .addGroup(GiocaScegliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonNuova, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonCarica, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(144, 144, 144))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GiocaScegliLayout.createSequentialGroup()
+                        .addComponent(labelCosaPreferisci)
+                        .addGap(121, 121, 121))))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        GiocaScegliLayout.setVerticalGroup(
+            GiocaScegliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GiocaScegliLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelCosaPreferisci)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(buttonNuova, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(buttonCarica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -317,6 +409,11 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(MenuOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(GiocaScegli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,6 +422,11 @@ public class FrameMenu extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(MenuOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(GiocaScegli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -373,10 +475,6 @@ public class FrameMenu extends javax.swing.JFrame {
         MenuOpzioni.setVisible(true);
     }//GEN-LAST:event_ListenerApriOpzioni
 
-    private void buttonMenuGiocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuGiocaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonMenuGiocaActionPerformed
-
     private void EsciOpzioni(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EsciOpzioni
         // TODO add your handling code here:
         MenuOpzioni.setVisible(false);
@@ -420,6 +518,25 @@ public class FrameMenu extends javax.swing.JFrame {
         livello_volume = sliderVolume.getValue();
         
     }//GEN-LAST:event_Imposta_livello_volume
+
+    private void GiocaPremuto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GiocaPremuto
+        // TODO add your handling code here:
+        MenuMain.setVisible(false);
+        GiocaScegli.setVisible(true);
+        
+        
+    }//GEN-LAST:event_GiocaPremuto
+
+    private void buttonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNuovaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonNuovaActionPerformed
+
+    private void InidetroPremuto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InidetroPremuto
+        // TODO add your handling code here:
+        MenuMain.setVisible(true);
+        GiocaScegli.setVisible(false);
+        
+    }//GEN-LAST:event_InidetroPremuto
     
     public static void cambia_volume(Clip clip){
     
@@ -503,8 +620,10 @@ public class FrameMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel GiocaScegli;
     private javax.swing.JPanel MenuMain;
     private javax.swing.JPanel MenuOpzioni;
+    private javax.swing.JButton buttonCarica;
     private javax.swing.JButton buttonEliminaRisultati;
     private javax.swing.JButton buttonFrecciaDxStili;
     private javax.swing.JButton buttonFrecciaSxStili;
@@ -512,10 +631,14 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JButton buttonMenuGioca;
     private javax.swing.JButton buttonMenuOpzioni;
     private javax.swing.JButton buttonMenuPartitePrec;
+    private javax.swing.JButton buttonNuova;
     private javax.swing.JButton buttonOpzioniEsci;
-    private javax.swing.JLabel buttonScacchi;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelCosaPreferisci;
     private javax.swing.JLabel labelOpzioni;
     private javax.swing.JLabel labelOpzioniVolume;
+    private javax.swing.JLabel labelScacchi;
     private javax.swing.JLabel labelStili;
     private javax.swing.JLabel labelVolume0;
     private javax.swing.JLabel labelVolume100;
